@@ -8,9 +8,9 @@ const routes = [
     component: HomeView
   },
   {
-    path: '/juegos',
-    name: 'juegos',
-    component: () => import('../views/JuegosView.vue')
+    path: '/games',
+    name: 'games',
+    component: () => import('../views/GamesView.vue')
   },
   {
     path: '/:pathMatch(.*)*',

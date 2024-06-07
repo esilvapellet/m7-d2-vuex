@@ -13,7 +13,7 @@
                             <router-link to="/" class="nav-link active">Inicio</router-link>
                         </li>
                         <li class="nav-item">
-                            <router-link to="/juegos" class="nav-link">Juegos</router-link>
+                            <router-link to="/games" class="nav-link">Juegos</router-link>
                         </li>
                     </ul>
                 </div>

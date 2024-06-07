@@ -11,9 +11,14 @@
 import CompTable from "@/components/CompTable.vue"
 
 export default {
-  name: 'JuegosView',
+  name: 'GamesView',
   components: {
     CompTable
+  },
+  methods: {
+    created() {
+      document.title = "Lista Juegos - Tienda 32 Bits"
+    }
   }
 }
 </script>

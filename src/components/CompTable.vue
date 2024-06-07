@@ -12,16 +12,16 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(juego, index) in juegos" :key="index">
-          <td>{{ juego.codigo }}</td>
-          <td>{{ juego.nombre }}</td>
-          <td>{{ juego.stock }}</td>
-          <td>{{ juego.precio }}</td>
+        <tr v-for="(game, index) in games" :key="index">
+          <td>{{ game.code }}</td>
+          <td>{{ game.name }}</td>
+          <td>{{ game.stock }}</td>
+          <td>{{ game.price }}</td>
           <!-- <td>{{ juego.color }}</td> -->
           <td>
             <div class="d-flex justify-content-center align-items-center">
-              <i class="fa-regular fa-square-plus btn btn-secondary mx-2"></i>
-              <i class="fa-regular fa-square-minus btn btn-secondary mx-2"></i>
+              <i class="fa-regular fa-square-plus btn btn-secondary mx-2" @click="addButton(game.code)"></i>
+              <i class="fa-regular fa-square-minus btn btn-secondary mx-2" @click="delButton(game.code)"></i>
             </div>
           </td>
         </tr>
@@ -40,17 +40,26 @@ export default {
   },
   data() {
     return {
-      listaJuegos: []
+      // games: []
     }
   },
   async created() {
     await this.loadGames();
   },
   computed: {
-    ...mapState(["juegos"])
+    ...mapState(["gamesList"]),
+    games() {
+      return this.gamesList
+    }
   },
   methods: {
     ...mapActions(['loadGames']),
+    addButton(index) {
+      this.$store.dispatch('stockAdd', index)
+    },
+    delButton(index) {
+      this.$store.dispatch('stockDel', index)
+    }
   },
 };
 </script>

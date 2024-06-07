@@ -23,7 +23,12 @@ export default createStore({
   actions: {
     async loadGames({ commit }) {
       try {
-        let response = await fetch("/games.json");
+        console.log(location)
+        let domain = location.origin
+        let project = "/m7-d2-vuex/"
+        let url = `${domain}${project}games.json`
+        console.log(url)
+        let response = await fetch(url);
         let games = await response.json();
         // console.log(juegos);
         // let juegos = data;

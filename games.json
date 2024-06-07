@@ -1,0 +1,44 @@
+[
+  {
+    "code": "0001",
+    "name": "Uncharted: Collection",
+    "stock": "43",
+    "price": "30000",
+    "color": "red"
+  },
+  {
+    "code": "0002",
+    "name": "Fifa 24",
+    "stock": "55",
+    "price": "25000",
+    "color": "blue"
+  },
+  {
+    "code": "0003",
+    "name": "GTA V",
+    "stock": "12",
+    "price": "15000",
+    "color": "green"
+  },
+  {
+    "code": "0004",
+    "name": "Gran Turismo Sport 7",
+    "stock": "56",
+    "price": "35000",
+    "color": "black"
+  },
+  {
+    "code": "0005",
+    "name": "Call of Duty: Modern Warfare 2",
+    "stock": "12",
+    "price": "10000",
+    "color": "blue"
+  },
+  {
+    "code": "0006",
+    "name": "Formula 1 2024",
+    "stock": "4",
+    "price": "20000",
+    "color": "red"
+  }
+]

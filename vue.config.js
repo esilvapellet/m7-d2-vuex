@@ -3,7 +3,7 @@ const webpack = require('webpack');
 
 module.exports = defineConfig({
   transpileDependencies: true,
-  publicPath: "/m7-d2-vuex/",
+  // publicPath: "/m7-d2-vuex/",
   configureWebpack: {
     plugins: [
       new webpack.DefinePlugin({

@@ -16,9 +16,9 @@ export default {
     CompTable
   },
   methods: {
-    created() {
-      document.title = "Lista Juegos - Tienda 32 Bits"
-    }
+    // created() {
+    //   document.title = "Lista Juegos - Tienda 32 Bits"
+    // }
   }
 }
 </script>

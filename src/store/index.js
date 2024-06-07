@@ -17,7 +17,12 @@ export default createStore({
       state.gamesList[index].stock++
     },
     DEL_STOCK(state, index) {
+      // if (state.gamesList[index].stock > 1) {
       state.gamesList[index].stock--
+      // } else {
+      //   alert("No se puede reducir stock de un producto sin stock.")
+      // }
+
     }
   },
   actions: {

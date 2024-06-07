@@ -7,21 +7,23 @@
           <th scope="col">Nombre</th>
           <th scope="col">Stock</th>
           <th scope="col">Precio</th>
-          <!-- <th scope="col">Color</th> -->
           <th scope="col">Acciones</th>
         </tr>
       </thead>
       <tbody>
-        <tr v-for="(game, index) in games" :key="index">
+        <tr v-for="(game, index) in games" :key="index" :class="{ 'text-danger': stockControl(game.stock) }">
           <td>{{ game.code }}</td>
           <td>{{ game.name }}</td>
           <td>{{ game.stock }}</td>
           <td>{{ game.price }}</td>
-          <!-- <td>{{ juego.color }}</td> -->
           <td>
             <div class="d-flex justify-content-center align-items-center">
-              <i class="fa-regular fa-square-plus btn btn-secondary mx-2" @click="addButton(game.code)"></i>
-              <i class="fa-regular fa-square-minus btn btn-secondary mx-2" @click="delButton(game.code)"></i>
+              <button class="btn btn-secondary mx-2">
+                <i class="fa-regular fa-square-plus" @click="addButton(game.code)"></i>
+              </button>
+              <button class="btn btn-secondary mx-2" :disabled="stockControl(game.stock)">
+                <i class="fa-regular fa-square-minus" @click="delButton(game.code)"></i>
+              </button>
             </div>
           </td>
         </tr>
@@ -50,7 +52,8 @@ export default {
     ...mapState(["gamesList"]),
     games() {
       return this.gamesList
-    }
+    },
+
   },
   methods: {
     ...mapActions(['loadGames']),
@@ -59,8 +62,20 @@ export default {
     },
     delButton(index) {
       this.$store.dispatch('stockDel', index)
+    },
+    stockControl(stock) {
+      console.log(stock)
+      if (stock < 1) {
+        return true
+      } else {
+        return false
+      }
     }
   },
 };
 </script>
-<style scoped></style>
+<style scoped>
+.table>:not(caption)>*>* {
+  color: inherit
+}
+</style>
